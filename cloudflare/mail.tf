@@ -9,15 +9,15 @@ resource "cloudflare_record" "box_cezarmathe_com" {
   proxied = false
 }
 
-resource "cloudflare_record" "mx_box_cezarmathe_com" {
-  zone_id = cloudflare_zone.main.id
-  name    = "box.cezarmathe.com"
-  type    = "MX"
-  ttl     = 1
-  proxied = false
+# resource "cloudflare_record" "mx_box_cezarmathe_com" {
+#   zone_id = cloudflare_zone.main.id
+#   name    = "box.cezarmathe.com"
+#   type    = "MX"
+#   ttl     = 1
+#   proxied = false
 
-  data    = {
-    weight = 10
-    target   = "box.cezarmathe.com"
-  }
-}
+#   data    = {
+#     weight = 10
+#     target   = "box.cezarmathe.com"
+#   }
+# }
