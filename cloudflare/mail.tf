@@ -17,8 +17,8 @@ resource "cloudflare_record" "mx_cezarmathe_com" {
   proxied = false
 
   data    = {
-    priority = 10
-    target   = "box.cezarmathe.com"
+    weight = 10
+    target = "box.cezarmathe.com"
   }
 }
 
@@ -30,7 +30,7 @@ resource "cloudflare_record" "mx_box_cezarmathe_com" {
   proxied = false
 
   data    = {
-    priority = 10
-    target   = "box.cezarmathe.com"
+    weight = 10
+    target = "box.cezarmathe.com"
   }
 }
