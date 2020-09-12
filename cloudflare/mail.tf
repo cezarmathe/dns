@@ -12,7 +12,7 @@ resource "cloudflare_record" "box_cezarmathe_com" {
 resource "cloudflare_record" "mx_box_cezarmathe_com" {
   zone_id = cloudflare_zone.main.id
   name    = "box.cezarmathe.com"
-  value   = "10 box.cezarmathe.com"
+  value   = "box.cezarmathe.com"
   type    = "MX"
   ttl     = 1
   proxied = false
