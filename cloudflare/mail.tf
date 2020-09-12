@@ -17,7 +17,7 @@ resource "cloudflare_record" "mx_box_cezarmathe_com" {
   proxied = false
 
   data    = {
-    priority = 10
+    weight = 10
     target   = "box.cezarmathe.com"
   }
 }
