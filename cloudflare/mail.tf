@@ -289,72 +289,72 @@ resource "cloudflare_record" "txt11_box_cezarmathe_com" {
   ttl      = 1
 }
 
-# # Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
-# # 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
-# resource "cloudflare_record" "sshfp1_box_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "box.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
+# 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
+resource "cloudflare_record" "sshfp1_box_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "box.cezarmathe.com"
+  type     = "SSHFP"
+  ttl      = 1
 
-#   data = {
-#     algorithm   = 1
-#     type        = 2
-#     fingerprint = "743E0CBDA6022CC342B38868A5473D30264378A092CF2D310C69C3B4B9193003"
-#   }
-# }
+  data = {
+    algorithm   = 1
+    type        = 2
+    fingerprint = "743E0CBDA6022CC342B38868A5473D30264378A092CF2D310C69C3B4B9193003"
+  }
+}
 
-# # Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
-# # 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
-# resource "cloudflare_record" "sshfp2_box_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "box.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
+# 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
+resource "cloudflare_record" "sshfp2_box_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "box.cezarmathe.com"
+  type     = "SSHFP"
+  ttl      = 1
 
-#   data = {
-#     algorithm   = 3
-#     type        = 2
-#     fingerprint = "768DDB4EC7FFDD818EF454B1A09F019F0701071953DFCF8D99B8B88E9BE9CBA9"
-#   }
-# }
+  data = {
+    algorithm   = 3
+    type        = 2
+    fingerprint = "768DDB4EC7FFDD818EF454B1A09F019F0701071953DFCF8D99B8B88E9BE9CBA9"
+  }
+}
 
-# # Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
-# # 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
-# resource "cloudflare_record" "sshfp3_box_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "box.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Optional. Provides an out-of-band method for verifying an SSH key before connecting. Use
+# 'VerifyHostKeyDNS yes' (or 'VerifyHostKeyDNS ask') when connecting with ssh.
+resource "cloudflare_record" "sshfp3_box_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "box.cezarmathe.com"
+  type     = "SSHFP"
+  ttl      = 1
 
-#   data = {
-#     algorithm   = 4
-#     type        = 2
-#     fingerprint = "25A4E0821B34D048419EE213FC46824FD05A0A02AB8B6BCAF7F3AF22F37795AD"
-#   }
-# }
+  data = {
+    algorithm   = 4
+    type        = 2
+    fingerprint = "25A4E0821B34D048419EE213FC46824FD05A0A02AB8B6BCAF7F3AF22F37795AD"
+  }
+}
 
-# # Recommended when DNSSEC is enabled. Advertises to mail servers connecting to the box that
-# # mandatory encryption should be used.
-# resource "cloudflare_record" "tlsa1_box_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "_25._tcp.box.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Recommended when DNSSEC is enabled. Advertises to mail servers connecting to the box that
+# mandatory encryption should be used.
+resource "cloudflare_record" "tlsa1_box_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "_25._tcp.box.cezarmathe.com"
+  type     = "TLSA"
+  ttl      = 1
 
-#   data = {
-#     usage         = 3
-#     selector      = 1
-#     matching_type = 1
-#     certificate   = "b1eab7c1da5f74401a99c2bfa0ad620be38c26db64370abc3be1779fb4af7ca0"
-#   }
-# }
+  data = {
+    usage         = 3
+    selector      = 1
+    matching_type = 1
+    certificate   = "b1eab7c1da5f74401a99c2bfa0ad620be38c26db64370abc3be1779fb4af7ca0"
+  }
+}
 
 # Optional. When DNSSEC is enabled, provides out-of-band HTTPS certificate validation for a few web clients that support it.
 resource "cloudflare_record" "tlsa2_box_cezarmathe_com" {
   zone_id  = cloudflare_zone.main.id
   name     = "_443._tcp.box.cezarmathe.com"
-  type     = "SRV"
+  type     = "TLSA"
   ttl      = 1
 
   data = {
