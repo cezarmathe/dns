@@ -94,6 +94,7 @@ resource "cloudflare_record" "srv1_cezarmathe_com" {
   data = {
     service  = "_caldavs"
     proto    = "_tcp"
+    name     = ""
     priority = 0
     weight   = 0
     port     = 443
@@ -112,6 +113,7 @@ resource "cloudflare_record" "srv2_cezarmathe_com" {
   data = {
     service  = "_carddavs"
     proto    = "_tcp"
+    name     = ""
     priority = 0
     weight   = 0
     port     = 443
@@ -348,19 +350,19 @@ resource "cloudflare_record" "txt11_box_cezarmathe_com" {
 #   }
 # }
 
-# # Optional. When DNSSEC is enabled, provides out-of-band HTTPS certificate validation for a few web clients that support it.
-# resource "cloudflare_record" "tlsa2_box_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "_443._tcp.box.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Optional. When DNSSEC is enabled, provides out-of-band HTTPS certificate validation for a few web clients that support it.
+resource "cloudflare_record" "tlsa2_box_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "_443._tcp.box.cezarmathe.com"
+  type     = "SRV"
+  ttl      = 1
 
-#   data = {
-#     usage         = 3
-#     selector      = 1
-#     matching_type = 1
-#     certificate   = "b1eab7c1da5f74401a99c2bfa0ad620be38c26db64370abc3be1779fb4af7ca0"
-#   }
-# }
+  data = {
+    usage         = 3
+    selector      = 1
+    matching_type = 1
+    certificate   = "b1eab7c1da5f74401a99c2bfa0ad620be38c26db64370abc3be1779fb4af7ca0"
+  }
+}
 
 # ------------------------------
