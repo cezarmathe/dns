@@ -83,41 +83,41 @@ resource "cloudflare_record" "txt5_cezarmathe_com" {
   ttl      = 1
 }
 
-# # Recommended. Specifies the hostname of the server that handles CardDAV/CalDAV services for email
-# # addresses on this domain.
-# resource "cloudflare_record" "srv1_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "_caldavs._tcp.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Recommended. Specifies the hostname of the server that handles CardDAV/CalDAV services for email
+# addresses on this domain.
+resource "cloudflare_record" "srv1_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "_caldavs._tcp.cezarmathe.com"
+  type     = "SRV"
+  ttl      = 1
 
-#   data = {
-#     service  = "_caldavs"
-#     proto    = "_tcp"
-#     priority = 0
-#     weight   = 0
-#     port     = 443
-#     target   = "box.cezarmathe.com"
-#   }
-# }
+  data = {
+    service  = "_caldavs"
+    proto    = "_tcp"
+    priority = 0
+    weight   = 0
+    port     = 443
+    target   = "box.cezarmathe.com"
+  }
+}
 
-# # Recommended. Specifies the hostname of the server that handles CardDAV/CalDAV services for email
-# # addresses on this domain.
-# resource "cloudflare_record" "srv2_cezarmathe_com" {
-#   zone_id  = cloudflare_zone.main.id
-#   name     = "_carddavs._tcp.cezarmathe.com"
-#   type     = "SRV"
-#   ttl      = 1
+# Recommended. Specifies the hostname of the server that handles CardDAV/CalDAV services for email
+# addresses on this domain.
+resource "cloudflare_record" "srv2_cezarmathe_com" {
+  zone_id  = cloudflare_zone.main.id
+  name     = "_carddavs._tcp.cezarmathe.com"
+  type     = "SRV"
+  ttl      = 1
 
-#   data = {
-#     service  = "_carddavs"
-#     proto    = "_tcp"
-#     priority = 0
-#     weight   = 0
-#     port     = 443
-#     target   = "box.cezarmathe.com"
-#   }
-# }
+  data = {
+    service  = "_carddavs"
+    proto    = "_tcp"
+    priority = 0
+    weight   = 0
+    port     = 443
+    target   = "box.cezarmathe.com"
+  }
+}
 
 # --------------------------
 
