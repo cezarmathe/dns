@@ -150,14 +150,6 @@ resource "cloudflare_record" "autodiscover_box_cezarmathe_com" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "box_cezarmathe_com" {
-  zone_id = cloudflare_zone.main.id
-  name    = "box.cezarmathe.com"
-  value   = "165.22.92.132"
-  type    = "A"
-  ttl     = 1
-}
-
 # Required. Specifies the hostname (and priority) of the machine that handles @box.cezarmathe.com
 # mail.
 resource "cloudflare_record" "mx_box_cezarmathe_com" {
